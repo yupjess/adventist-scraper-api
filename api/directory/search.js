@@ -1,4 +1,4 @@
-const data = require("../../../data/directory.json");
+const data = require("../../data/directory.json");
 
 module.exports = (req, res) => {
   res.setHeader("Content-Type", "application/json");

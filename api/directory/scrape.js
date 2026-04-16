@@ -1,4 +1,4 @@
-const data = require("../../../data/directory.json");
+const data = require("../../data/directory.json");
 
 const PAGE_SIZE = 25;
 
