@@ -1,0 +1,31 @@
+name: Validate Directory Data
+
+on:
+  push:
+    paths:
+      - "data/directory.json"
+  pull_request:
+    paths:
+      - "data/directory.json"
+
+jobs:
+  validate:
+    name: Validate JSON
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Validate JSON structure
+        run: node scripts/validate.js
+
+      - name: Report success
+        run: |
+          COUNT=$(node -e "const d=require('./data/directory.json'); console.log(d.length)")
+          echo "✅ directory.json is valid — $COUNT records ready to deploy."

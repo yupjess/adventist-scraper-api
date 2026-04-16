@@ -1,0 +1,14 @@
+{
+  "name": "adventist-directory-api",
+  "version": "2.0.0",
+  "description": "Adventist Directory API - Serves Philippine SDA church and company records",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "node index.js"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=18"
+  }
+}
